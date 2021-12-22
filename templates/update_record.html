@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Modifica inregistrare</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+    <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <h2> </h2>
+            </div>
+            <div class="col-md-offset-3 col-md-5">
+                <a href="{{url_for('home')}}" class="btn btn-success center-block">Acasa</a>
+            </div>
+            <div class="col-md-offset-3 col-md-5">
+                <form method="POST" action="">
+                <h2 class="page-header text-primary text-center">Modifica inregistrare</h2>
+                <div class="form-group">
+                    <label>Nume Caracter</label>
+                    <input type="text" class="form-control" name="numeCaracter" value="{{data['numeCaracter']}}">
+                </div>
+                <div class="form-group">
+                    <label>Tip Caracter</label>
+                    <textarea class="form-control" name="tipCaracter">{{data['tipCaracter']}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Nivel</label>
+                    <input type="text" class="form-control" name="nivel" value="{{data['nivel']}}">
+                </div>
+                <div class="form-group">
+                    <label>Bani</label>
+                    <input type="text" class="form-control" name="bani" value="{{data['bani']}}">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-block" value="Modifica">
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $("form").attr("autocomplete","off");
+</script>

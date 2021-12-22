@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista caractere</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="col-md-offset-1 col-md-10">
+            <div>
+                <h2> </h2>
+            </div>
+            <div>
+                <a href="{{url_for('home')}}" class="btn btn-success center-block">Acasa</a>
+            </div>
+            <h2 class="page-header text-primary text-center">Lista caractere</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                    <th>Nume Caracter</th>
+                    <th>Tip Caracter</th>
+                    <th>Nivel</th>
+                    <th>Bani</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for res in data %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{res["numeCaracter"]}}</td>
+                        <td>{{res["tipCaracter"]}}</td>
+                        <td>{{res["nivel"]}}</td>
+                        <td>{{res["bani"]}}</td>
+                        <td style="text-align:center"><a href="{{url_for('update_record',id=res['IDCaracter'])}} " class="btn btn-primary">Modifica</a></td>
+                        <td style="text-align:center"><a href="{{url_for('delete_record',id=res['IDCaracter'])}} " class="btn btn-danger">Sterge</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>
