@@ -1,0 +1,29 @@
+{% extends "layoutUser.html" %}
+
+{% block content1 %}
+<table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nume Misiune</th>
+                    <th>Nivel Recomandat</th>
+                    <th>Recompensa</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for misiune in misiuni %}
+                    <tr>
+                        <td>{{ misiune[1] }}</td>
+                        <td>{{ misiune[2] }}</td>
+                        <td>{{ misiune[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+</table>
+{% endblock content1 %}
+
+{% block content2 %}
+    <button type="button" class="btn btn-dark"><a href="/misiuni?offset={{ nextOffset }}">Next Page </a></button>
+    <button type="button" class="btn btn-dark"><a href="/misiuni?offset={{ previousOffset }}">Previous Page</a></button>
+    <button type="button" class="btn btn-dark"><a href="/misiuni?offset=0">First Page</a></button>
+    <button type="button" class="btn btn-dark"><a href="/misiuni?offset={{ lastOffset }}">Last Page</a></button>
+{% endblock content2 %}

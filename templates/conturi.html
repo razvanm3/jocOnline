@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content1 %}
+	{% for cont in conturi %}
+		<p>{{ cont[0] }} {{ cont[1] }} {{ cont[2] }} {{ cont[3] }} {{ cont[4] }} </p>
+	{% endfor %}
+{% endblock content1 %}
+
+{% block content2 %}
+<a href="/conturi?offset={{ nextOffset }}">Next Page </a>
+<a href="/conturi?offset={{ previousOffset }}">Previous Page</a>
+<a href="/conturi?offset=0">First Page</a>
+<a href="/conturi?offset={{ lastOffset }}">Last Page</a>
+{% endblock content2 %}

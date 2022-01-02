@@ -1,0 +1,28 @@
+{% extends "layoutUser.html" %}
+
+
+{% block content1 %}
+<table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nume Caracter</th>
+                    <th>Tip Caracter</th>
+                    <th>Nivel</th>
+                    <th>Bani</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for caracter in caractere %}
+                        {% set i=loop.index %}
+                    <tr>
+                        <td>{{ i }}</td>
+                        <td>{{caracter[2]}}</td>
+                        <td>{{caracter[3]}}</td>
+                        <td>{{caracter[4]}}</td>
+                        <td>{{caracter[5]}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+</table>
+{% endblock content1 %}

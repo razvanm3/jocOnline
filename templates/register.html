@@ -1,0 +1,17 @@
+{% extends "layoutUser.html" %}
+
+
+{% block content2 %}
+<div class="content">
+    <div class="form">
+        <form method="POST" action="/submitregister">
+            <h2>Create Account</h2>
+            <input type="email" name="email" placeholder=" Enter Email Here">
+            <input type="date" name="birth-date" value="2022-01-31">
+            <input type="password" name="password" placeholder=" Enter Password Here">
+            <input type="password" name="password-confirm" placeholder="Confirm Password">
+            <input type="submit" name="Login" class="btn"></input>
+        </form>
+    </div>
+</div>
+{% endblock content2%}

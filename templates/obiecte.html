@@ -1,0 +1,29 @@
+{% extends "layoutUser.html" %}
+
+{% block content1 %}
+<table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nume Item</th>
+                    <th>Nivel Necesar</th>
+                    <th>Pret</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in iteme %}
+                    <tr>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+</table>
+{% endblock content1 %}
+
+{% block content2 %}
+    <button type="button" class="btn btn-dark"><a href="/obiecte?offset={{ nextOffset }}">Next Page </a></button>
+    <button type="button" class="btn btn-dark"><a href="/obiecte?offset={{ previousOffset }}">Previous Page</a></button>
+    <button type="button" class="btn btn-dark"><a href="/obiecte?offset=0">First Page</a></button>
+    <button type="button" class="btn btn-dark"><a href="/obiecte?offset={{ lastOffset }}">Last Page</a></button>
+{% endblock content2 %}

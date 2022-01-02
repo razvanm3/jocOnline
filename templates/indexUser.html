@@ -1,0 +1,26 @@
+{% extends "layoutUser.html" %}
+
+{% block content1 %}
+<article class="media content-section">
+		  <div class="media-body">
+            {% if 'email' not in session %}
+            <div class="form">
+            <form method="POST" action="/submitlogin">
+                <h2>Login Here</h2>
+                <input type="email" name="email" placeholder=" Enter Email Here">
+                <input type="password" name="password" placeholder=" Enter Password Here">
+                <input type="submit" name="Login" class="btn"></input>
+
+                <p class="link">Forgot password?</p><br>
+                <a href="/resetpassword">Reset it</a>
+                <p class="link">Don't have an account?</p><br>
+                <a href="/register">Sign up here</a>
+
+            </form>
+            </div>
+            {% else %}
+                <p class="link">Bun venit, {{ session['email'] }}!</p><br>
+            {% endif %}
+          </div>
+</article>
+{% endblock content1 %}

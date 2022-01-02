@@ -1,0 +1,23 @@
+{% extends "layoutUser.html" %}
+
+{% block content1 %}
+<table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nume Misiune</th>
+                    <th>Nivel Recomandat</th>
+                    <th>Recompensa</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for misiune in misiuniCaracterUser %}
+                    <tr>
+                        <td>{{ misiune[0] }}</td>
+                        <td>{{ misiune[1] }}</td>
+                        <td>{{ misiune[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+</table>
+    <a href="/caractereUser" class="btn btn-primary">Inapoi</a>
+{% endblock content1 %}

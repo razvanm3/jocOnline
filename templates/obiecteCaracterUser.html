@@ -1,0 +1,23 @@
+{% extends "layoutUser.html" %}
+
+{% block content1 %}
+<table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Nume Item</th>
+                    <th>Nivel Necesar</th>
+                    <th>Pret</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in obiecteCaracterUser %}
+                    <tr>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+</table>
+    <a href="/caractereUser" class="btn btn-primary">Inapoi</a>
+{% endblock content1 %}
